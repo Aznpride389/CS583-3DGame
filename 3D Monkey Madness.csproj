@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
+    <Compile Include="Assets\Scripts\CameraTracking.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LowPolyWater_Pack\LowPoly Island\Credits.txt" />

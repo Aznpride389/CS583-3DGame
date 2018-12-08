@@ -1,16 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class CameraTracking : MonoBehaviour {
+public class CameraTracker : MonoBehaviour
+{
+    public GameObject player;
+    private Vector3 playerOffset;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+        playerOffset = transform.position - player.transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.LookAt(player.transform);
+        transform.position = player.transform.position + playerOffset;
+    }
 }

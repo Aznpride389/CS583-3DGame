@@ -538,7 +538,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1995286891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.18, y: 0.364, z: -12.515}
+  m_LocalPosition: {x: -2.17, y: 0.51, z: -12.515}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
@@ -555,7 +555,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a599abcbd98e3747a9b76e937c0d870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  barrel: {fileID: 0}
-  smooth: 4
-  tiltAngle: 85
+  rb: {fileID: 0}
+  speed: 5

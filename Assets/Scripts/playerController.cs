@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platformController : MonoBehaviour {
+public class playerController : MonoBehaviour
+{
 
     //private Rigidbody2D rb2d;
 
@@ -13,9 +14,13 @@ public class platformController : MonoBehaviour {
     //User can control rotation of player
     void Update()
     {
+        float moveHorizontal = 0;
+        float moveVertical = 0;
+
         // Tilts player with arrow keys as determined in Input settings
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //moveHorizontal = Input.GetAxis("Horizontal");
+        //moveVertical = Input.GetAxis("Vertical");
+
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         rb.AddForce(movement * speed);

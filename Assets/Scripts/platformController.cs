@@ -12,6 +12,8 @@ public class platformController : MonoBehaviour {
     //User can control rotation of player
     void Update()
     {
+        
+
         moveHorizontal = (-1) * Input.GetAxis("Horizontal") * speed;
         moveVertical = Input.GetAxis("Vertical") * speed;
 

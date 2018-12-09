@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraTracking : MonoBehaviour {
 
+    public GameObject player;
+
 	// Use this for initialization
 	void Start () {
 		

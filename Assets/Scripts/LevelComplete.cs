@@ -8,28 +8,33 @@ public class LevelComplete : MonoBehaviour {
     public GameObject player;
     private bool gameOver;
 
+    public int curScene;
+    public int nextScene;
+
+    void Start()
+    {
+        gameOver = false;
+
+        curScene = SceneManager.GetActiveScene().buildIndex;
+    }
+
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             Destroy(player);
-            Scene loadedLevel = SceneManager.GetActiveScene();
-            if (loadedLevel.name == "level3")
+
+            if (curScene != 2)
+            {
+                nextScene = curScene + 1;
+                SceneManager.LoadScene(nextScene);
+            }
+            else
             {
                 gameOver = true;
-            }
-            else if (loadedLevel.name == "level1")
-            {
-                SceneManager.LoadScene("level2");
-
-            }
-            else if (loadedLevel.name == "level2")
-            {
-                SceneManager.LoadScene("level3");
-
+                //SceneManager.LoadScene("VictoryScene");
             }
         }
     }
-
 }

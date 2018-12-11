@@ -1,8 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class CameraTracker : MonoBehaviour
+public class CameraTracking : MonoBehaviour
 {
+
     public GameObject player;
     private Vector3 offset;
 
@@ -10,15 +12,17 @@ public class CameraTracker : MonoBehaviour
     Vector3 playerPrevPos, playerMoveDir;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //gets and set camera offset/distance and player intital position
         offset = transform.position - player.transform.position;
         distance = offset.magnitude;
         playerPrevPos = player.transform.position;
     }
-	
-	// Update is called once per frame
-	void LateUpdate () {
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
         //gets player's direction of movement by takingits new position - old position
         playerMoveDir = player.transform.position - playerPrevPos;
 

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CameraTracking : MonoBehaviour
 {
-
     public GameObject player;
-    private Vector3 offset;
+    public float speed = 5.0f;
 
-    float distance;
-    Vector3 playerPrevPos, playerMoveDir;
+    private Vector3 cur = Vector3.zero;
+    private Vector3 offset;
+    private float distance;
+    private Vector3 playerPrevPos;
+    private Vector3 playerMoveDir;
 
     // Use this for initialization
     void Start()
@@ -32,10 +34,13 @@ public class CameraTracking : MonoBehaviour
             //points camer in direction of player new position
             playerMoveDir.Normalize();
 
-            //moves camera to player new position - 
-            transform.position = player.transform.position - playerMoveDir * distance;
+            //moves camera to player new position
+            //transform.position = player.transform.position - playerMoveDir * distance;
+            //this.gameObject.transform.position += new Vector3(0, 5f, 0);
 
-            this.gameObject.transform.position += new Vector3(0, 5f, 0);
+            //moves camera smoothly
+            Vector3 POS = player.transform.position - playerMoveDir * distance + new Vector3(0, 5f, 0);
+            transform.position = Vector3.SmoothDamp(transform.position, POS, ref cur, .05f, speed);
 
             transform.LookAt(player.transform.position);
 

@@ -11,8 +11,8 @@ public class scriptCamera : MonoBehaviour {
     public float setBack = 4.0f;
     public float speed = 5.0f;
 
-    private Vector3 playerCurPos = new Vector3();
-    private Vector3 playerPrevPos = new Vector3();
+    public Vector3 playerCurPos = new Vector3();
+    public Vector3 playerPrevPos = new Vector3();
     private Vector3 cur = Vector3.zero;
 
     // Use this for initialization

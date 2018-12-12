@@ -9,13 +9,12 @@ public class timerController : MonoBehaviour {
     public Text timeText;
 	// Use this for initialization
 	void Start () {
-        time = 0;
-        
+        time = 30;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        time += Time.deltaTime;
+        time -= Time.deltaTime;
         timeText.text = time.ToString("0.0");
 	}
 }

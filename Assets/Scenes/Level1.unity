@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1434,9 +1434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ed8605318481848a3ce3ea586ef4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1995286891}
+  floor: {fileID: 1588018165}
   speed: 2
   moveVertical: 0
   moveHorizontal: 0
+  timeMove: 0
 --- !u!1001 &1749875039
 Prefab:
   m_ObjectHideFlags: 0

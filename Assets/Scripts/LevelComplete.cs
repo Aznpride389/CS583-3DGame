@@ -21,11 +21,12 @@ public class LevelComplete : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        Debug.Log("Collision detected");
+        if (other.tag == player.tag)
         {
             Destroy(player);
 
-            if (curScene != 2)
+            if (curScene != 5)
             {
                 nextScene = curScene + 1;
                 SceneManager.LoadScene(nextScene);

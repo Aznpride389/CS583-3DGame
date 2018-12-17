@@ -23,6 +23,8 @@ public class LevelComplete : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            var audio = GetComponent<AudioSource>();
+            audio.Play();
             Destroy(player);
 
             if (curScene != 2)

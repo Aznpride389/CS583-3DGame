@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class timerController : MonoBehaviour {
 
@@ -25,7 +26,17 @@ public class timerController : MonoBehaviour {
         time -= Time.deltaTime;
         timeText.text = time.ToString("0.0");
 
+        if (time <= 0.5)
+        {
+            Invoke("Restart", .5f);
+        }
+
         miniCam.transform.position = Vector3.SmoothDamp(miniCam.transform.position, (player.transform.position + new Vector3(0, 10, 0)), ref cur, .01f, speed);
         //miniCam.transform.LookAt(player.transform);
+    }
+    void Restart()
+    {
+        Scene curScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(curScene.buildIndex);
     }
 }

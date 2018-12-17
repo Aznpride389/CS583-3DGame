@@ -22,7 +22,7 @@ public class LevelComplete : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision detected");
-        if (other.tag == player.tag)
+        if (other.name == player.name)
         {
             Destroy(player);
 

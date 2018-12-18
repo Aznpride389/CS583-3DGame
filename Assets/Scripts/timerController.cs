@@ -18,7 +18,15 @@ public class timerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        time = 30;
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if(currentLevel == 3)
+        {
+            time = 60;
+        }
+        else
+        {
+           time = 30;
+        }
 	}
 	
 	// Update is called once per frame

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelComplete : MonoBehaviour {
 
     public GameObject player;
+    public GameObject music;
     private bool gameOver;
 
     public int curScene;
@@ -24,10 +25,12 @@ public class LevelComplete : MonoBehaviour {
         if (other.tag == "Player")
         {
             var audio = GetComponent<AudioSource>();
+            Destroy(music);
             audio.Play();
+            MyCoroutine();
             Destroy(player);
 
-            if (curScene != 2)
+            if (curScene != 3)
             {
                 nextScene = curScene + 1;
                 SceneManager.LoadScene(nextScene);
@@ -35,8 +38,14 @@ public class LevelComplete : MonoBehaviour {
             else
             {
                 gameOver = true;
+                
                 //SceneManager.LoadScene("VictoryScene");
             }
         }
+    }
+
+    IEnumerator MyCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(4);    //Wait one frame
     }
 }

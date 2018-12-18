@@ -30,7 +30,7 @@ public class LevelComplete : MonoBehaviour {
             MyCoroutine();
             Destroy(player);
 
-            if (curScene != 2)
+            if (curScene != 3)
             {
                 nextScene = curScene + 1;
                 SceneManager.LoadScene(nextScene);

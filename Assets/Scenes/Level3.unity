@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44939637, g: 0.499471, b: 0.57569724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44939655, g: 0.4994713, b: 0.5756977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -571,7 +571,7 @@ MonoBehaviour:
   camera: {fileID: 1816559716}
   setAbove: 3
   setBack: 4
-  speed: 5
+  speed: 2
   playerCurPos: {x: 0, y: 0, z: 0}
   playerPrevPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &547504888

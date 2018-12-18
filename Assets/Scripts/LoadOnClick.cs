@@ -10,9 +10,14 @@ public class LoadOnClick : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    public void TaskOnClick()
+    public void Quit()
     {
         Application.Quit();
+    }
+   
+    public void Home()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
     
 }

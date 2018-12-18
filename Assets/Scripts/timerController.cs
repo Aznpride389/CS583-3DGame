@@ -19,7 +19,7 @@ public class timerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
-        if(currentLevel == 3)
+        if(currentLevel == 5)
         {
             time = 60;
         }

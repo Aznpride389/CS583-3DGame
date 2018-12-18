@@ -10,13 +10,11 @@ public class LevelComplete : MonoBehaviour {
     private bool gameOver;
 
     public int curScene;
-    public int nextScene;
 
     void Start()
     {
         gameOver = false;
-
-        curScene = SceneManager.GetActiveScene().buildIndex;
+        //curScene = SceneManager.GetActiveScene().buildIndex;
     }
 
 
@@ -24,28 +22,26 @@ public class LevelComplete : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            var audio = GetComponent<AudioSource>();
             Destroy(music);
-            audio.Play();
-            MyCoroutine();
             Destroy(player);
 
-            if (curScene != 3)
+            if (curScene != 5)
             {
-                nextScene = curScene + 1;
+                int nextScene = curScene + 1;
                 SceneManager.LoadScene(nextScene);
             }
             else
             {
                 gameOver = true;
-                
-                //SceneManager.LoadScene("VictoryScene");
+                var audio = GetComponent<AudioSource>();
+                audio.Play();
+                Invoke("Victory", 4f);
             }
         }
     }
 
-    IEnumerator MyCoroutine()
+    void Victory()
     {
-        yield return new WaitForSecondsRealtime(4);    //Wait one frame
+        SceneManager.LoadScene("Main Menu");
     }
 }

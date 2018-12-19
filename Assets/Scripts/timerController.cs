@@ -9,7 +9,6 @@ public class timerController : MonoBehaviour {
     public GameObject player;
     public GameObject miniCam;
     public GameObject miniMap;
-    public float speed = 15.0f;
 
     public Text timeText;
     public float time;
@@ -39,8 +38,7 @@ public class timerController : MonoBehaviour {
             Invoke("Restart", .5f);
         }
 
-        miniCam.transform.position = Vector3.SmoothDamp(miniCam.transform.position, (player.transform.position + new Vector3(0, 10, 0)), ref cur, .01f, speed);
-        //miniCam.transform.LookAt(player.transform);
+        miniCam.transform.position = Vector3.SmoothDamp(miniCam.transform.position, (player.transform.position + new Vector3(0, 10, 0)), ref cur, .01f, Mathf.Infinity);
     }
     void Restart()
     {

@@ -10,12 +10,13 @@ public class worldController : MonoBehaviour {
     //User can control rotation of player
     void FixedUpdate()
     {
+        /*
         TiltX += Input.GetAxis("Horizontal");
         transform.eulerAngles = new Vector3(TiltX, 5, 0);
 
         TiltY += Input.GetAxis("Vertical");
         transform.eulerAngles = new Vector3(5, TiltY, 0);
-
+        */
     }
 
 

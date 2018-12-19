@@ -14,12 +14,11 @@ public class scriptCamera : MonoBehaviour {
     public Vector3 playerCurPos = new Vector3();
     public Vector3 playerPrevPos = new Vector3();
     private Vector3 cur = Vector3.zero;
-    private float timer;
 
     // Use this for initialization
     void Start () {
         playerCurPos = player.transform.position;
-        playerPrevPos = playerCurPos;
+        playerPrevPos = playerCurPos + new Vector3(0, setAbove, -setBack);
 
         camera = gameObject.GetComponent<Camera>().gameObject;
         camera.transform.position = playerCurPos + new Vector3(0, setAbove, -setBack);
@@ -35,8 +34,6 @@ public class scriptCamera : MonoBehaviour {
 
     void chkCam()
     {
-        //timer = Time.smoothDeltaTime;
-
         Vector3 playerMoveDir = playerCurPos - playerPrevPos;
         playerMoveDir.Normalize();
 
@@ -45,12 +42,12 @@ public class scriptCamera : MonoBehaviour {
         Rigidbody rb = player.GetComponent<Rigidbody>();
 
         //If ball is moving, update previous position
-        if (playerMoveDir != Vector3.zero && rb.velocity.magnitude <= 1.0f)  playerPrevPos = playerCurPos;
+        if (playerMoveDir != Vector3.zero && rb.velocity.magnitude <= 1.0f) playerPrevPos = playerCurPos;
 
         transform.LookAt(player.transform.position);
         transform.position = Vector3.SmoothDamp(transform.position, POS, ref cur, .5f, Mathf.Infinity);
         transform.LookAt(player.transform.position);
-        
+
     }
 
 }

@@ -32,7 +32,7 @@ public class timerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         time -= Time.deltaTime;
-        timeText.text = time.ToString("0.0");
+        timeText.text = "Time: " + time.ToString("0.0");
 
         if (time <= 0.5)
         {

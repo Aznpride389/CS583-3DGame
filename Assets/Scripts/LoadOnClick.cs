@@ -17,7 +17,10 @@ public class LoadOnClick : MonoBehaviour
    
     public void Home()
     {
-        SceneManager.LoadScene("Main Menu");
+        Debug.Log("Returning to main menu");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("Main menu");
+        SceneManager.UnloadSceneAsync(scene.name);
     }
-    
+
 }

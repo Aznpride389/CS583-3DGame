@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44939655, g: 0.4994713, b: 0.5756977, a: 1}
+  m_IndirectSpecularColor: {r: 0.44939637, g: 0.499471, b: 0.57569724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1303,7 +1303,6 @@ MonoBehaviour:
   player: {fileID: 992067524}
   miniCam: {fileID: 1816559716}
   miniMap: {fileID: 576025590}
-  speed: 15
   timeText: {fileID: 1187655943}
   time: 0
 --- !u!114 &810793874
@@ -1569,7 +1568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.5999756, y: -21.380005}
+  m_AnchoredPosition: {x: 4.5996094, y: -21.380005}
   m_SizeDelta: {x: 86, y: 23}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1187655943
@@ -1653,6 +1652,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 135011111143623672, guid: 9833b2a8d953e654eb800278500163ce,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: fa0605541900b754cab4d4c7532e5327,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9833b2a8d953e654eb800278500163ce, type: 2}
   m_IsPrefabAsset: 0

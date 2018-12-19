@@ -44,10 +44,12 @@ public class scriptCamera : MonoBehaviour {
         //If ball is moving, update previous position
         if (playerMoveDir != Vector3.zero && rb.velocity.magnitude <= 1.0f) playerPrevPos = playerCurPos;
 
+        //If player stop moving reorient camera back foward
+        if (playerMoveDir == Vector3.zero) playerPrevPos = playerCurPos + new Vector3(0, setAbove, -setBack);
+
         transform.LookAt(player.transform.position);
         transform.position = Vector3.SmoothDamp(transform.position, POS, ref cur, .5f, Mathf.Infinity);
         transform.LookAt(player.transform.position);
-
     }
 
 }
